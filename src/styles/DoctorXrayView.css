@@ -1,0 +1,84 @@
+.patient-details {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.viewer-container {
+  overflow: hidden;
+}
+
+.thumbnails-sidebar {
+  overflow-y: auto;
+}
+
+.thumbnails-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-viewer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.image-toolbar {
+  flex-wrap: wrap;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+.no-image-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+.placeholder-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .viewer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .thumbnails-sidebar {
+    max-height: 300px;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .patient-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .view-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .image-toolbar {
+    justify-content: center;
+  }
+  
+  .toolbar-divider {
+    display: none;
+  }
+}

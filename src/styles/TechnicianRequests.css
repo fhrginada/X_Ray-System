@@ -1,0 +1,17 @@
+/* TechnicianRequests.css */
+.search-box {
+  width: 100%;
+}
+
+.requests-table-container {
+  overflow-x: auto;
+}
+
+.requests-table {
+  width: 100%;
+  min-width: 800px;
+}
+.no-results {
+  text-align: center;
+  padding: 40px !important;
+}

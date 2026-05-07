@@ -1,0 +1,163 @@
+/* PreviousPatients.css */
+
+/* ── Page Layout ─────────────────────────────────────────────────────────── */
+.previous-patients-page {
+  width: 100%;
+}
+
+/* ── Filter Bar ──────────────────────────────────────────────────────────── */
+.filter-bar {
+  width: 100%;
+}
+
+.filter-bar label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── Table Container ─────────────────────────────────────────────────────── */
+.history-table-container {
+  overflow-x: auto;
+  border-radius: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+/* Header row */
+.history-table thead tr {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.history-table thead th {
+  white-space: nowrap;
+}
+
+/* Body rows */
+.history-table tbody tr {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+  transition: background-color 0.15s ease;
+}
+
+.history-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.history-table tbody tr:hover {
+  background-color: rgba(51, 65, 85, 0.35);
+}
+
+/* Selected row — sky blue tint */
+.history-table tbody tr.selected-row {
+  background-color: rgba(56, 189, 248, 0.08);
+  border-left: 3px solid rgba(56, 189, 248, 0.5);
+}
+
+.history-table tbody tr.selected-row:hover {
+  background-color: rgba(56, 189, 248, 0.12);
+}
+
+/* ── No Results ──────────────────────────────────────────────────────────── */
+.no-results {
+  text-align: center;
+  padding: 40px !important;
+  color: #94a3b8;
+}
+
+/* ── Payment Status Badges ───────────────────────────────────────────────── */
+/* Paid — green */
+.badge-paid {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Unpaid — red */
+.badge-unpaid {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Partial — amber/orange */
+.badge-partial {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #fcd34d !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ── Detail Panel ────────────────────────────────────────────────────────── */
+.patient-history-panel {
+  animation: panelSlideDown 0.22s ease-out both;
+}
+
+.patient-history-panel .detail-section-title {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.patient-history-panel .detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.patient-history-panel .detail-row .detail-label {
+  flex: 0 0 7rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #94a3b8;
+}
+
+.patient-history-panel .detail-row .detail-value {
+  font-size: 0.875rem;
+  color: #f1f5f9;
+}
+
+/* ── Animations ──────────────────────────────────────────────────────────── */
+@keyframes panelSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .filter-bar > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-bar > div > div {
+    width: 100%;
+  }
+
+  .filter-bar select,
+  .filter-bar input {
+    width: 100% !important;
+  }
+
+  .history-table-container {
+    border-radius: 0.75rem;
+  }
+
+  .patient-history-panel > div.grid {
+    grid-template-columns: 1fr;
+  }
+}
